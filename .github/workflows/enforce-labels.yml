@@ -9,4 +9,4 @@ jobs:
     steps:
     - uses: yogevbd/enforce-label-action@2.1.0
       with:
-        REQUIRED_LABELS_ANY: 'bug,build,dependencies,doc,documentation,enhancement,epic,feature,fix,hotfix,infrastructure,major,minor,patch,refactor,security,tests'
+        REQUIRED_LABELS_ANY: ${{ join(github.event.issue.labels.*.name, ',') }}
